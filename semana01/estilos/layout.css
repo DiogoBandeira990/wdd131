@@ -1,0 +1,119 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+
+  /* Grid no body, conforme pedido na atividade */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "main   aside"
+    "footer footer";
+}
+
+/* Associando cada elemento à sua área no grid */
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* Header */
+header {
+  background-color: #333333;
+  padding: 20px;
+}
+
+header > p {
+  margin-bottom: 20px;
+}
+
+/* Navegação - Flexbox */
+nav {
+  background-color: #000000;
+  margin: 0 -20px -20px -20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+main {
+  background-color: #c0c0c0;
+  color: #333333;
+  padding: 20px;
+}
+
+/* Aside */
+aside {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #333333;
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* ===== Responsividade ===== 
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav {
+    margin: 0 -20px;
+  }
+}*/
