@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
   color: #ffffff;
   min-height: 100vh;
 
-  /* Grid no body, conforme pedido na atividade */
+  
   display: grid;
   grid-template-columns: 3fr 1fr;
     grid-template-rows: auto 1fr auto;
@@ -20,7 +20,7 @@ body {
     "footer footer";
 }
 
-/* Associando cada elemento à sua área no grid */
+
 header {
   grid-area: header;
 }
@@ -37,7 +37,7 @@ footer {
   grid-area: footer;
 }
 
-/* Header */
+
 header {
   background-color: #333333;
   padding: 20px;
@@ -47,7 +47,7 @@ header > p {
   margin-bottom: 20px;
 }
 
-/* Navegação - Flexbox */
+
 nav {
   background-color: #000000;
   margin: 0 -20px -20px -20px;
@@ -69,21 +69,19 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Main */
 main {
   background-color: #c0c0c0;
   color: #333333;
   padding: 20px;
 }
 
-/* Aside */
 aside {
   background-color: #ffffff;
   color: #333333;
   padding: 20px;
 }
 
-/* Footer */
+
 footer {
   background-color: #333333;
   text-align: center;
