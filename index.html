@@ -1,34 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Revisão de HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD,131,Fundamentos da Web Dinâmica Diogo Bandeira</title>
+    <meta name="description" content="WDD,131,Fundamentos da Web Dinâmica Diogo Bandeira">
+    <meta name="author" content="Diogo Bandeira Ramalho">
+    <link rel="stylesheet" href="estilos/base.css">
 </head>
+
 <body class="container">
-    <header class="content">
-        <p>Conteúdo do Header</p>
-        <li>Página Inicial </li>
-        <li>Projetos</li>
-        <li>Serviços</li>
-        <li>Fale Conosco</li>
+    <header>
+        <h1>WDD 131: Fundamentos da Web Dinâmica - Diogo Bandeira</h1>
     </header>
-    <div class="content">
-        <main class="main">Content</main>
-        <aside class="sidebar">SIDEBAR</aside>
-        <aside class="ads">ADS</aside>
 
+    <nav>
+        <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Canvas</a></li>
+            <li><a href="#">Escritura</a></li>
+            <li><a href="#">Projeto Final</a></li>
+        </ul>
+    </nav>
 
-    </div>
-    <h1>Diogo Bandeira</h1>
-    <p>Software Developer</p>
+    <main>
+        <h2 class="page-title">Diogo Bandeira</h2>
 
-    <footer class="footer">
-    <p>
-        Conteúdo do footer
-    </p>
+        <div class="content-wrapper">
 
+            <section class="sobre-mim">
+                <h3 class="section-title">Sobre Mim</h3>
+                <div class="section-body">
+                    <div class="sobre-texto-foto">
+                        <p class="sobre-texto">
+                            Meu nome é Diogo e me chamam de Go. Nasci em São Paulo, Brasil e
+                            vivo com minha família em Porto Alegre. Atualmente trabalho como
 
+                            assistente jurídica administrativa em um escritório de advocacia. Meus
+                            filhos são meu mundo e adoro passar tempo com eles. Amo viajar e
+                            amo aprender coisas novas.
+                        </p>
+                        <img src="images/diogo.jpg" alt="Foto de Diogo Bandeira" class="foto-perfil">
+                    </div>
+
+                    <h4 class="cidade-titulo">Toloria, Madagascar</h4>
+                    <hr>
+
+                    <div class="madagascar-info">
+                        <div class="bandeira-container">
+                            <img src="images/bandeira-madagascar.jpg" alt="Bandeira Oficial de Madagascar"
+                                class="bandeira">
+                            <p class="bandeira-legenda">Bandeira Oficial de Madagascar</p>
+                        </div>
+                        <p class="madagascar-texto">
+                            Madagascar é a 4ª maior ilha do mundo e
+                            está localizada no Oceano Índico. É o lar
+                            de 5% das espécies de plantas e animais do
+                            mundo, das quais mais de 80% são
+                            endêmicas de Madagascar. A ilha é mais
+                            conhecida por seus lêmures, baobás e
+                            baunilha.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="recursos">
+                <h3 class="section-title">Recursos Web Dev</h3>
+                <div class="section-body">
+                    <ul class="lista-recursos">
+                        <li><a href="#">Comunidade Dev.to</a></li>
+                        <li><a href="#">Revista Smashing</a></li>
+                        <li><a href="#">CSS Tricks</a></li>
+                        <li><a href="#">W3 Schools</a></li>
+                        <li><a href="#">Udemy</a></li>
+                        <li><a href="#">Imagem de Espaço Reservado Lorem Picsum</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;2025 <span class="emoji">🌸</span> Diogo Bandeira <span class="emoji">🌸</span> Madagascar</p>
+        <p class="last-mod">Last Modification: <span id="lastModified"></span></p>
     </footer>
+
+    <script>
+        document.getElementById("lastModified").textContent = document.lastModified;
+    </script>
+
 </body>
+
 </html>
