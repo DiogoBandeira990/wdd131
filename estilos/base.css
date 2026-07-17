@@ -33,9 +33,10 @@ header {
   margin-bottom: 0.4rem;
 }
 
-header h1 {
+.header-name {
   font-size: 1.8rem;
   font-weight: 600;
+  font-family: 'Poppins', 'Trebuchet MS', sans-serif;
 }
 
 /* ===== Navegação ===== */
