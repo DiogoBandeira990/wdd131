@@ -4,67 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD,131,Fundamentos da Web Dinâmica Diogo Bandeira</title>
-    <meta name="description" content="Página Principal do site do curso de WDD 131 onde possui informações sobre Diogo Bandeira, o autor do site.">
+    <title>WDD 131 – Fundamentos da Web Dinâmica - Diogo Bandeira</title>
+    <meta name="description" content="WDD 131 – Fundamentos da Web Dinâmica. Diogo Bandeira Ramalho. Página pessoal com informações sobre o autor, sua cidade natal Maceió e recursos de desenvolvimento web.">
     <meta name="author" content="Diogo Bandeira Ramalho">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos/base.css">
+    <script src="scripts/obterdatas.js" defer></script>
 </head>
 
 <body class="container">
     <header>
-        <h1><span id="course-title">WDD 131: Fundamentos da Web Dinâmica</span> - Diogo Bandeira</h1>
+        <span id="course-title">WDD 131: Fundamentos da Web Dinâmica</span>
+        <h1>Diogo Bandeira</h1>
 
         <nav>
             <ul>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">Canvas</a></li>
-                <li><a href="#">Escritura</a></li>
+                <li><a href="https://www.linkedin.com/in/diogo-ramalho-064a88140" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12?lang=por" target="_blank" rel="noopener">Escritura</a></li>
                 <li><a href="#">Projeto Final</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2 class="page-title">Diogo Bandeira</h2>
+        <h1 class="page-title">Diogo Bandeira</h1>
 
         <div class="content-wrapper">
 
             <section class="sobre-mim card">
-                <h3 class="section-title">Sobre Mim</h3>
+                <h2 class="section-title">Sobre Mim</h2>
                 <div class="section-body">
                     <div class="sobre-texto-foto">
                         <p class="sobre-texto">
                             Meu nome é Diogo e me chamam de Diogo. Nasci em Maceió-Alagoas, Brasil e
                             vivo com minha família que é composta por mim, minha esposa Karyny e nossa filha gatinha pet Mimi. Atualmente trabalho como Supervisor de Operações em tempo real em uma distribuidora de energia elétrica e minha esposa trabalha como professora de inglês.
                             Durante esse tempo, estive envolvido em diversos projetos de desenvolvimento web, aprimorando minhas habilidades em HTML, CSS e JavaScript. Estou sempre em busca de novos desafios e oportunidades para expandir meu conhecimento na área de desenvolvimento web.
-                    
                         </p>
                         <img src="imagens/diogo.jpeg" alt="Foto de Diogo Bandeira" class="foto-perfil">
                     </div>
 
-                    <h4 class="cidade-titulo">Maceió, Alagoas</h4>
+                    <h3 class="cidade-titulo">Maceió, Alagoas</h3>
                     <hr>
 
-                    <div class="maceió-info">
+                    <div class="maceio-info">
                         <div class="bandeira-container">
                             <img src="imagens/bandeira-alagoas.png" alt="Bandeira Oficial de Alagoas"
                                 class="bandeira">
                             <p class="bandeira-legenda">Bandeira Oficial de Alagoas</p>
                         </div>
-                        <p class="maceió-texto">
+                        <p class="maceio-texto">
                             Maceió é a capital do estado de Alagoas e uma das cidades mais bonitas do litoral brasileiro. Conhecida por suas praias de águas cristalinas e tons azul-turquesa, a cidade atrai visitantes de diversas partes do Brasil e do mundo. Entre os pontos turísticos mais famosos estão as praias de Pajuçara, Ponta Verde e Jatiúca, além das piscinas naturais formadas pelos recifes de coral.
-
-A cultura local é marcada pela influência indígena, africana e portuguesa, refletida na culinária, no artesanato e nas festas populares. Pratos à base de frutos do mar, como sururu e camarão, fazem parte da gastronomia típica da região.
-
-Além das belezas naturais, Maceió possui uma orla urbana bem estruturada, com ciclovias, áreas de lazer e feiras de artesanato. O clima tropical, com temperaturas agradáveis durante todo o ano, contribui para que a cidade seja um destino turístico muito procurado e admirado.
-
                         </p>
                     </div>
                 </div>
             </section>
 
             <section class="recursos card">
-                <h3 class="section-title">Recursos Web Dev</h3>
+                <h2 class="section-title">Recursos Web Dev</h2>
                 <div class="section-body">
                     <ul class="lista-recursos">
                         <li><a href="#">Comunidade Dev.to</a></li>
@@ -81,13 +80,9 @@ Além das belezas naturais, Maceió possui uma orla urbana bem estruturada, com 
     </main>
 
     <footer>
-        <p>&copy;2025 <span class="emoji">🌸</span> Diogo Bandeira <span class="emoji">🌸</span> Madagascar</p>
-        <p class="last-mod">Last Modification: <span id="lastModified"></span></p>
+        <p>&copy;<span id="anoatual"></span> Diogo Bandeira - Maceió, Alagoas, Brasil</p>
+        <p id="ultimaModificacao"></p>
     </footer>
-
-    <script>
-        document.getElementById("lastModified").textContent = document.lastModified;
-    </script>
 
 </body>
 

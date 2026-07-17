@@ -6,9 +6,14 @@
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Segoe UI', Verdana, sans-serif;
+  font-family: 'Open Sans', 'Segoe UI', Verdana, sans-serif;
   color: #2b2b2b;
   background-color: #ffffff;
+}
+
+h1, h2, h3, h4,
+#course-title {
+  font-family: 'Poppins', 'Trebuchet MS', sans-serif;
 }
 
 /* ===== Cabeçalho ===== */
@@ -19,19 +24,25 @@ header {
   padding: 1.3rem 1rem;
 }
 
-header h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
 #course-title {
   display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 /* ===== Navegação ===== */
 nav {
-  background-color: #1d4e6d;
+  background-color: #163d55;
   margin-top: 0.8rem;
+  border-radius: 4px;
 }
 
 nav ul {
@@ -41,16 +52,24 @@ nav ul {
   flex-wrap: wrap;
 }
 
+nav ul li {
+  flex: 1;
+}
+
 nav ul li a {
   display: block;
   padding: 0.8rem;
   color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-nav ul li a:hover {
-  color: #7fc6e0;
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #7fc6e0;
+  color: #163d55;
 }
 
 /* ===== Main ===== */
@@ -68,7 +87,7 @@ main {
   color: #1a1a1a;
 }
 
-/* ===== Layout de duas colunas ===== */
+/* ===== Layout de duas colunas (Grid) ===== */
 .content-wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -127,7 +146,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-.maceió-info {
+.maceio-info {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
@@ -152,7 +171,7 @@ hr {
   margin-top: 0.4rem;
 }
 
-.maceió-texto {
+.maceio-texto {
   flex: 1;
   line-height: 1.6;
 }
@@ -188,7 +207,7 @@ footer p {
   margin: 0.2rem 0;
 }
 
-.last-mod {
+footer p:last-child {
   color: #f5e642;
   font-size: 0.9rem;
 }
@@ -205,7 +224,7 @@ footer p {
     text-align: center;
   }
 
-  .madagascar-info {
+  .maceio-info {
     flex-direction: column;
     align-items: center;
     text-align: center;
