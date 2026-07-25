@@ -1,40 +1,15 @@
-/* templos-grande.css - estilos para telas maiores (tablet e desktop) */
+/* templos-grande.css - reforços visuais exclusivos de telas maiores (tablet e desktop) */
 
 @media screen and (min-width: 768px) {
 
-    header {
-        padding: 1.2rem 2.5rem;
+    figure:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
     }
 
-    #botao-menu {
-        display: none;
-    }
-
-    nav {
-        flex-direction: row;
-        justify-content: flex-end;
-        width: auto;
-        margin-top: 0;
-        gap: 0.5rem;
-    }
-
-    nav.oculto {
-        display: flex;
-    }
-
-    nav a {
-        width: auto;
-        padding: 0.5rem 1rem;
-    }
-
-    main {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        padding: 3rem 2.5rem;
-    }
-
-    main h1 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
+    nav a:focus-visible {
+        outline: 2px solid var(--cor-destaque);
+        outline-offset: 2px;
     }
 
 }

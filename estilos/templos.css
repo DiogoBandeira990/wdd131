@@ -32,6 +32,10 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media screen and (min-width: 768px) {
+        padding: 1.2rem 2.5rem;
+    }
 }
 
 header p {
@@ -49,6 +53,10 @@ header p {
     line-height: 1;
     cursor: pointer;
     padding: 0.25rem 0.5rem;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
 }
 
 nav {
@@ -58,10 +66,21 @@ nav {
     gap: 0.5rem;
     width: 100%;
     margin-top: 1rem;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
+        margin-top: 0;
+    }
 }
 
 nav.oculto {
     display: none;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
 }
 
 nav a {
@@ -72,6 +91,11 @@ nav a {
     text-align: center;
     border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease;
+
+    @media screen and (min-width: 768px) {
+        width: auto;
+        padding: 0.5rem 1rem;
+    }
 }
 
 nav a:hover {
@@ -88,6 +112,11 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 3rem 2.5rem;
+    }
 }
 
 main h1 {
@@ -96,6 +125,11 @@ main h1 {
     color: var(--cor-principal);
     margin: 0 0 0.5rem 0;
     grid-column: 1 / -1;
+
+    @media screen and (min-width: 768px) {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
 }
 
 figure {
@@ -105,6 +139,7 @@ figure {
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
     text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 figure img {
