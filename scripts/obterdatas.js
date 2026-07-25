@@ -1,4 +1,4 @@
-// Preenche o ano atual dinamicamente no rodapé
+// Preenche o ano atual no rodapé
 const anoAtual = document.getElementById("anoatual");
 anoAtual.textContent = new Date().getFullYear();
 

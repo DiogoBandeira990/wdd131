@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum do Templo</title>
+    <meta name="description" content="Álbum de fotos de templos ao redor do mundo.">
+    <meta name="author" content="Diogo Bandeira Ramalho">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/templos.css">
+    <link rel="stylesheet" href="estilos/templos-grandes.css" media="screen and (min-width: 768px)">
+
+    <script src="scripts/templos.js" defer></script>
+</head>
+<body>
+    <header>
+        <p>Álbum do Templo</p>
+        <button id="botao-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <nav id="nav-principal" class="oculto">
+            <a href="index.html">Página Inicial</a>
+            <a href="#antigo">Antigo</a>
+            <a href="#novo">Novo</a>
+            <a href="#grande">Grande</a>
+            <a href="#pequeno">Pequeno</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Álbum do Templo</h1>
+
+        <figure>
+            <img src="imagens/templo-salt-lake.jpg" alt="Templo de Salt Lake" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Salt Lake</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-sao-paulo.jpg" alt="Templo de São Paulo" loading="lazy" width="300" height="400">
+            <figcaption>Templo de São Paulo</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-recife.jpg" alt="Templo de Recife" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Recife</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-manaus.jpg" alt="Templo de Manaus" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Manaus</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-brasilia.jpg" alt="Templo de Brasília" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Brasília</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-kirtland.jpg" alt="Templo de Kirtland" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Kirtland</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-nauvoo.jpg" alt="Templo de Nauvoo" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Nauvoo</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-toquio.jpg" alt="Templo de Tóquio" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Tóquio</figcaption>
+        </figure>
+
+        <figure>
+            <img src="imagens/templo-paris.jpg" alt="Templo de Paris" loading="lazy" width="300" height="400">
+            <figcaption>Templo de Paris</figcaption>
+        </figure>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="ano"></span> Diogo - WDD 131</p>
+        <p>Maceió, Alagoas, Brasil</p>
+        <p>Última modificação: <span id="ultimaModificacao"></span></p>
+    </footer>
+</body>
+</html>
