@@ -157,7 +157,7 @@ ul {
   margin: 0;
 }
 
-/* ===== Divisor em forma de onda (elemento de assinatura) ===== */
+
 .divisor-onda {
   line-height: 0;
   background-color: var(--cor-areia);
@@ -227,7 +227,6 @@ ul {
   display: inline-block;
 }
 
-/* Pseudoelemento do ícone do clima: fica vazio no mobile, ativado na visualização ampla */
 .clima__titulo::after {
   content: "";
 }
@@ -360,7 +359,7 @@ ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Emoticon do clima via pseudoelemento, exigido na visualização ampla */
+ 
   .clima__titulo::after {
     content: "\26C5";
     margin-left: 0.6rem;
