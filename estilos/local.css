@@ -1,0 +1,374 @@
+/* ===== Variáveis globais ===== */
+:root {
+  --cor-oceano: #0b6e6e;
+  --cor-turquesa: #14b8aa;
+  --cor-areia: #f7eedd;
+  --cor-coral: #ff6f4c;
+  --cor-tinta: #08292c;
+  --cor-branco: #ffffff;
+
+  --fonte-display: "Fraunces", Georgia, serif;
+  --fonte-corpo: "Work Sans", system-ui, sans-serif;
+  --fonte-dados: "IBM Plex Mono", "Courier New", monospace;
+
+  --raio: 16px;
+  --sombra: 0 14px 34px rgba(8, 41, 44, 0.16);
+  --largura-maxima: 1160px;
+}
+
+/* ===== Reset básico ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-corpo);
+  color: var(--cor-tinta);
+  background-color: var(--cor-areia);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2 {
+  font-family: var(--fonte-display);
+  margin: 0 0 0.5rem;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  background-color: var(--cor-oceano);
+  color: var(--cor-branco);
+}
+
+.cabecalho__conteudo {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.marca {
+  text-decoration: none;
+  color: var(--cor-branco);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.marca__nome {
+  font-family: var(--fonte-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.marca__estado {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-turquesa);
+}
+
+.navegacao ul {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.navegacao a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.15rem;
+  transition: border-color 0.2s ease;
+}
+
+.navegacao a:hover,
+.navegacao a:focus-visible {
+  border-color: var(--cor-coral);
+}
+
+/* ===== Herói ===== */
+.heroi {
+  position: relative;
+  min-height: 62vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroi__imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroi__sombra {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 41, 44, 0.05) 30%, rgba(8, 41, 44, 0.75) 100%);
+}
+
+.heroi__texto {
+  position: relative;
+  color: var(--cor-branco);
+  padding: 2rem 1.25rem;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroi__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  color: var(--cor-turquesa);
+  margin: 0 0 0.4rem;
+}
+
+.heroi__titulo {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  margin: 0 0 0.5rem;
+}
+
+.heroi__legenda {
+  max-width: 34ch;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* ===== Divisor em forma de onda (elemento de assinatura) ===== */
+.divisor-onda {
+  line-height: 0;
+  background-color: var(--cor-areia);
+  margin-top: -1px;
+}
+
+.divisor-onda svg {
+  width: 100%;
+  height: 40px;
+  display: block;
+}
+
+.divisor-onda path {
+  fill: var(--cor-oceano);
+}
+
+/* ===== Seções gerais ===== */
+.secao {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+}
+
+.secao h2 {
+  font-size: 1.9rem;
+  color: var(--cor-oceano);
+}
+
+/* ===== Sobre ===== */
+.sobre__texto p {
+  margin: 0 0 1rem;
+}
+
+.sobre__fatos {
+  margin-top: 1.5rem;
+  background-color: var(--cor-branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 1.25rem 1.5rem;
+}
+
+.lista-fatos li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(8, 41, 44, 0.1);
+  font-size: 0.95rem;
+}
+
+.lista-fatos li:last-child {
+  border-bottom: none;
+}
+
+.lista-fatos__rotulo {
+  color: var(--cor-oceano);
+  font-weight: 600;
+}
+
+.lista-fatos__valor {
+  font-family: var(--fonte-dados);
+  text-align: right;
+}
+
+/* ===== Clima ===== */
+.clima__titulo {
+  display: inline-block;
+}
+
+/* Pseudoelemento do ícone do clima: fica vazio no mobile, ativado na visualização ampla */
+.clima__titulo::after {
+  content: "";
+}
+
+.clima__icone-mobile {
+  margin-bottom: 1rem;
+}
+
+.cartao-clima {
+  background-color: var(--cor-oceano);
+  color: var(--cor-branco);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra);
+}
+
+.cartao-clima__condicao {
+  margin: 0 0 1rem;
+  font-weight: 600;
+  color: var(--cor-turquesa);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+}
+
+.cartao-clima__grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+  margin: 0;
+}
+
+.cartao-clima__item dt {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.15rem;
+}
+
+.cartao-clima__item dd {
+  margin: 0;
+  font-family: var(--fonte-dados);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.cartao-clima__nota {
+  margin: 1.25rem 0 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== Galeria de praias ===== */
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.galeria__item {
+  margin: 0;
+  background-color: var(--cor-branco);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.galeria__item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.galeria__item figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--cor-oceano);
+  font-weight: 500;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  background-color: var(--cor-tinta);
+  color: var(--cor-areia);
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.rodape p {
+  margin: 0.25rem 0;
+}
+
+.rodape__modificacao {
+  color: rgba(247, 238, 221, 0.65);
+}
+
+/* ===== Consulta de mídia: tablet ===== */
+@media (min-width: 700px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Consulta de mídia: visualização ampla ===== */
+@media (min-width: 1000px) {
+  .sobre {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .cartao-clima {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .cartao-clima__condicao {
+    margin: 0;
+  }
+
+  .cartao-clima__grade {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Emoticon do clima via pseudoelemento, exigido na visualização ampla */
+  .clima__titulo::after {
+    content: "\26C5";
+    margin-left: 0.6rem;
+    font-size: 1.6rem;
+    vertical-align: middle;
+  }
+
+  .clima__icone-mobile {
+    display: none;
+  }
+}

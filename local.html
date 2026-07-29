@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maceió, Alagoas | O Caribe Brasileiro</title>
+  <meta name="description" content="Conheça Maceió, Alagoas: praias de águas turquesa, cultura nordestina e o clima atual da capital alagoana.">
+  <meta name="author" content="Diogo Bandeira Ramalho">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos/local.css">
+  <script src="scripts/local.js" defer></script>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="cabecalho__conteudo">
+      <a href="local.html" class="marca">
+        <span class="marca__nome">Maceió</span>
+        <span class="marca__estado">Alagoas · Brasil</span>
+      </a>
+      <nav class="navegacao" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#clima">Clima</a></li>
+          <li><a href="#praias">Praias</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="heroi">
+      <picture>
+        <source media="(min-width: 1000px)" srcset="https://images.unsplash.com/photo-1587571594954-272f8cc473d0?fm=webp&q=80&w=1600&fit=crop 1600w">
+        <source media="(min-width: 600px)" srcset="https://images.unsplash.com/photo-1587571594954-272f8cc473d0?fm=webp&q=80&w=1100&fit=crop 1100w">
+        <img
+          src="https://images.unsplash.com/photo-1587571594954-272f8cc473d0?fm=webp&q=80&w=800&fit=crop"
+          srcset="
+            https://images.unsplash.com/photo-1587571594954-272f8cc473d0?fm=webp&q=80&w=600&fit=crop 600w,
+            https://images.unsplash.com/photo-1587571594954-272f8cc473d0?fm=webp&q=80&w=1100&fit=crop 1100w,
+            https://images.unsplash.com/photo-1587571594954-272f8cc473d0?fm=webp&q=80&w=1600&fit=crop 1600w"
+          sizes="100vw"
+          alt="Coqueiros à beira-mar sob céu azul em uma praia de Maceió, Alagoas"
+          class="heroi__imagem"
+          width="1600" height="1000">
+      </picture>
+      <div class="heroi__sombra"></div>
+      <div class="heroi__texto">
+        <p class="heroi__eyebrow">Nordeste do Brasil</p>
+        <h1 class="heroi__titulo">Maceió</h1>
+        <p class="heroi__legenda">O Caribe Brasileiro — águas turquesa, recifes de coral e a maré que dita o ritmo da cidade.</p>
+      </div>
+    </section>
+
+    <div class="divisor-onda" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z"></path>
+      </svg>
+    </div>
+
+    <section id="sobre" class="secao sobre">
+      <div class="sobre__texto">
+        <h2>Sobre Maceió</h2>
+        <p>
+          Capital do estado de Alagoas, Maceió fica na costa nordeste do Brasil e é famosa pelas
+          piscinas naturais formadas por recifes de corais, visíveis na maré baixa em praias como
+          Pajuçara e Ponta Verde. A cidade combina rendeiras trabalhando à sombra dos coqueiros,
+          jangadas coloridas e uma culinária marcada por frutos do mar e pratos como o sururu.
+        </p>
+        <p>
+          Quem visita costuma alternar dias de praia com passeios pelas lagoas próximas e pelo
+          litoral norte, onde piscinas naturais de água morna e transparente formam paisagens que
+          rendem à região o apelido de "Caribe brasileiro".
+        </p>
+      </div>
+      <aside class="sobre__fatos" aria-label="Dados rápidos sobre Maceió">
+        <ul class="lista-fatos">
+          <li><span class="lista-fatos__rotulo">Fundação</span><span class="lista-fatos__valor">5 de dezembro de 1815</span></li>
+          <li><span class="lista-fatos__rotulo">Estado</span><span class="lista-fatos__valor">Alagoas</span></li>
+          <li><span class="lista-fatos__rotulo">Idioma</span><span class="lista-fatos__valor">Português</span></li>
+          <li><span class="lista-fatos__rotulo">Moeda</span><span class="lista-fatos__valor">Real (R$)</span></li>
+          <li><span class="lista-fatos__rotulo">Fuso horário</span><span class="lista-fatos__valor">UTC−3 (Horário de Brasília)</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="clima" class="secao clima">
+      <h2 class="clima__titulo">Clima</h2>
+      <img src="images/icone-parcial-nublado.svg" alt="Ícone de sol com nuvens, tempo parcialmente nublado" class="clima__icone-mobile" width="48" height="48">
+
+      <div class="cartao-clima">
+        <p class="cartao-clima__condicao">Parcialmente nublado</p>
+        <dl class="cartao-clima__grade">
+          <div class="cartao-clima__item">
+            <dt>Temperatura</dt>
+            <dd><span id="temperatura-atual">26</span>&nbsp;°C</dd>
+          </div>
+          <div class="cartao-clima__item">
+            <dt>Vento</dt>
+            <dd><span id="vento-atual">14</span>&nbsp;km/h</dd>
+          </div>
+          <div class="cartao-clima__item">
+            <dt>Umidade</dt>
+            <dd>78%</dd>
+          </div>
+          <div class="cartao-clima__item">
+            <dt>Sensação térmica</dt>
+            <dd id="sensacao-termica">—</dd>
+          </div>
+        </dl>
+        <p class="cartao-clima__nota">
+          Valores estáticos por enquanto — a integração com dados meteorológicos em tempo real
+          chega em um curso futuro.
+        </p>
+      </div>
+    </section>
+
+    <section id="praias" class="secao praias">
+      <h2>Praias para conhecer</h2>
+      <div class="galeria">
+        <figure class="galeria__item">
+          <img src="https://images.unsplash.com/photo-1626794467452-937f5100a9f5?fm=webp&q=80&w=500&fit=crop" alt="Ondas quebrando na praia ao entardecer em Maceió" loading="lazy" width="500" height="360">
+          <figcaption>Praia da Ponta Verde ao entardecer</figcaption>
+        </figure>
+        <figure class="galeria__item">
+          <img src="https://images.unsplash.com/photo-1611194718770-8cfb3473bdda?fm=webp&q=80&w=500&fit=crop" alt="Pessoa caminhando sobre formação rochosa à beira-mar" loading="lazy" width="500" height="360">
+          <figcaption>Recifes de coral na maré baixa</figcaption>
+        </figure>
+        <figure class="galeria__item">
+          <img src="https://images.unsplash.com/photo-1521814728937-009d76026884?fm=webp&q=80&w=500&fit=crop" alt="Coco fresco servido à beira-mar" loading="lazy" width="500" height="360">
+          <figcaption>Água de coco na beira da praia</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; <span id="ano-atual"></span> Diogo Bandeira Ramalho — Maceió, Alagoas</p>
+    <p class="rodape__modificacao">Última modificação: <span id="ultima-modificacao"></span></p>
+  </footer>
+
+</body>
+</html>
