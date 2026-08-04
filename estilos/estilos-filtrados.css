@@ -1,0 +1,214 @@
+/* estilos-filtrados.css
+   Identidade visual: pedra clara, ouro envelhecido e tipografia gravada,
+   inspirada nos cornerstones (pedras fundamentais) dos templos. */
+
+:root {
+  --cor-fundo: #f6f2e8;
+  --cor-fundo-cartao: #fffdf8;
+  --cor-texto: #2a2724;
+  --cor-texto-suave: #6b6255;
+  --cor-escura: #1f2a2b;
+  --cor-destaque: #a9793e;
+  --cor-linha: #ddd3bd;
+
+  --fonte-display: "Cormorant Garamond", "Georgia", serif;
+  --fonte-corpo: "Inter", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-corpo);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.cabecalho {
+  background-color: var(--cor-escura);
+  color: var(--cor-fundo);
+}
+
+.cabecalho__faixa {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.cabecalho__epigrafe {
+  margin: 0 0 0.25rem;
+  font-family: var(--fonte-corpo);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cor-destaque);
+}
+
+.cabecalho__titulo {
+  margin: 0;
+  font-family: var(--fonte-display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 0.04em;
+}
+
+.nav-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  border-top: 1px solid rgba(246, 242, 232, 0.15);
+}
+
+.nav-principal__item {
+  flex: 1 1 auto;
+  min-width: 6.5rem;
+  padding: 0.9rem 1rem;
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(246, 242, 232, 0.12);
+  color: inherit;
+  font-family: var(--fonte-corpo);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-principal__item:last-child {
+  border-right: none;
+}
+
+.nav-principal__item:hover,
+.nav-principal__item:focus-visible {
+  background-color: rgba(169, 121, 62, 0.15);
+}
+
+.nav-principal__item[aria-current="page"] {
+  color: var(--cor-destaque);
+}
+
+.nav-principal__item[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--cor-destaque);
+}
+
+/* ---------- Galeria ---------- */
+
+.galeria-secao {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.galeria-secao__legenda {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 2rem;
+}
+
+.galeria-templos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cartao-templo {
+  background-color: var(--cor-fundo-cartao);
+  border: 1px solid var(--cor-linha);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cartao-templo__imagem-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--cor-linha);
+}
+
+.cartao-templo__imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartao-templo__corpo {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.cartao-templo__nome {
+  font-family: var(--fonte-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.cartao-templo__linha {
+  border: none;
+  border-top: 2px solid var(--cor-destaque);
+  width: 2.5rem;
+  margin: 0 0 1rem;
+}
+
+.cartao-templo__dados {
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cartao-templo__dados dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+}
+
+.cartao-templo__dados dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  background-color: var(--cor-escura);
+  color: var(--cor-fundo);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.rodape p {
+  margin: 0.25rem 0;
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 480px) {
+  .nav-principal__item {
+    min-width: 45%;
+    border-right: none;
+    border-bottom: 1px solid rgba(246, 242, 232, 0.12);
+  }
+}
