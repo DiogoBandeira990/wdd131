@@ -1,9 +1,3 @@
-// templos-filtrados.js
-// 1) Mantém o comportamento do menu mobile do álbum original.
-// 2) Gera os cartões de templo dinamicamente a partir do array "templos"
-//    (scripts/dados-templos.js), com carregamento lento nativo nas imagens.
-// 3) Responde aos filtros do menu principal (Antigo, Novo, Grande, Pequeno).
-
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------- Menu mobile ---------- */

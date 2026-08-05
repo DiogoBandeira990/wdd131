@@ -1,8 +1,3 @@
-// dados-templos.js
-// Array de objetos de templos usado por scripts/templos-filtrados.js
-// Inclui os 9 templos do álbum original + 3 templos adicionados
-// (Manti Utah, Draper Utah e Colonia Juárez Chihuahua México).
-
 const templos = [
   {
     nome: "Templo de Salt Lake",
@@ -16,27 +11,27 @@ const templos = [
     local: "São Paulo, Brasil",
     dedicado: "1978-10-30",
     areaPes2: 41888,
-    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/S%C3%A3o_Paulo_Brazil_Temple.jpg"
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Sao_Paulo_Brazil_Temple.jpg"
   },
   {
     nome: "Templo de Recife Brasil",
     local: "Recife, Brasil",
-    dedicado: "2000-12-16",
-    areaPes2: 10700,
-    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Recife_Brazil_Temple.jpg"
+    dedicado: "2000-12-15",
+    areaPes2: 37200,
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Recife_Brazile_Temple_by_denalidog_-_Alan.jpg"
   },
   {
     nome: "Templo de Manaus Brasil",
     local: "Manaus, Brasil",
-    dedicado: "2012-05-06",
-    areaPes2: 10700,
-    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Manaus_Brazil_Temple.jpg"
+    dedicado: "2012-06-10",
+    areaPes2: 32032,
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Templo_SUD_de_Manaus_3.JPG"
   },
   {
     nome: "Templo de Brasília Brasil",
     local: "Brasília, Brasil",
-    dedicado: "2019-12-15",
-    areaPes2: 55169,
+    dedicado: "2023-09-17",
+    areaPes2: 25000,
     imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Bras%C3%ADlia_Brazil_Temple.jpg"
   },
   {
@@ -44,7 +39,7 @@ const templos = [
     local: "Kirtland, Ohio, EUA",
     dedicado: "1836-03-27",
     areaPes2: 15000,
-    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Kirtland_Temple.jpg"
+    imagem: "https://commons.wikimedia.org/wiki/Special:FilePath/Kirtland_Temple_-_Kirtland,_OH.jpg"
   },
   {
     nome: "Templo de Nauvoo",
