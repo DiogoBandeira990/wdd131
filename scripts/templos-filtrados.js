@@ -1,6 +1,8 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------- Menu mobile ---------- */
+
 
   const botaoMenu = document.getElementById("botao-menu");
   const navPrincipal = document.getElementById("nav-principal");
@@ -11,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     botaoMenu.textContent = aberto ? "✕" : "☰";
   });
 
-  /* ---------- Galeria de templos ---------- */
+ 
 
   const galeria = document.getElementById("galeria-templos");
   const legenda = document.getElementById("legenda-filtro");
@@ -85,7 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   botoesFiltro.forEach((botao) => {
-    botao.addEventListener("click", () => {
+    botao.addEventListener("click", (evento) => {
+      evento.preventDefault();
       const filtro = botao.dataset.filtro;
 
       botoesFiltro.forEach((b) => b.removeAttribute("aria-current"));
@@ -94,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       legenda.textContent = textoLegenda[filtro] ?? textoLegenda.todos;
       renderizarTemplos(filtrarTemplos(filtro));
 
-      // Em telas pequenas, fecha o menu depois de escolher um filtro.
+      
       if (window.matchMedia("(max-width: 767px)").matches) {
         navPrincipal.classList.add("oculto");
         botaoMenu.setAttribute("aria-expanded", "false");
@@ -105,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderizarTemplos(templos);
 
-  /* ---------- Rodapé ---------- */
+
 
   document.getElementById("ano").textContent = new Date().getFullYear();
   document.getElementById("ultimaModificacao").textContent = document.lastModified;
