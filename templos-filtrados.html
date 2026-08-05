@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Templos | Galeria Filtrada</title>
-  <meta name="description" content="Galeria interativa de templos de A Igreja de Jesus Cristo dos Santos dos Últimos Dias, com filtragem dinâmica por idade e tamanho.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum do Templo | Filtrado</title>
+    <meta name="description" content="Álbum de fotos de templos ao redor do mundo, com filtragem dinâmica por idade e tamanho.">
+    <meta name="author" content="Diogo Bandeira Ramalho">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="estilos/estilos-filtrados.css">
+    <link rel="stylesheet" href="estilos/templos-filtrados.css">
+    <link rel="stylesheet" href="estilos/templos-filtrados-grande.css" media="screen and (min-width: 768px)">
+
+    <script src="scripts/dados-templos.js" defer></script>
+    <script src="scripts/templos-filtrados.js" defer></script>
 </head>
 <body>
+    <header>
+        <p>Álbum do Templo</p>
+        <button id="botao-menu" aria-label="Abrir/fechar menu" aria-expanded="true">✕</button>
+        <nav id="nav-principal">
+            <button type="button" class="nav-link" data-filtro="todos" aria-current="page">Página Inicial</button>
+            <button type="button" class="nav-link" data-filtro="antigos">Antigo</button>
+            <button type="button" class="nav-link" data-filtro="novos">Novo</button>
+            <button type="button" class="nav-link" data-filtro="grandes">Grande</button>
+            <button type="button" class="nav-link" data-filtro="pequenos">Pequeno</button>
+        </nav>
+    </header>
 
-  <header class="cabecalho">
-    <div class="cabecalho__faixa">
-      <p class="cabecalho__epigrafe">Casa do Senhor</p>
-      <h1 class="cabecalho__titulo">Templos</h1>
-    </div>
+    <main>
+        <h1>Álbum do Templo</h1>
+        <p id="legenda-filtro" class="legenda-filtro">Exibindo todos os templos</p>
 
-    <nav class="nav-principal" aria-label="Filtro de templos">
-      <button class="nav-principal__item" data-filtro="todos" aria-current="page">Página Inicial</button>
-      <button class="nav-principal__item" data-filtro="antigos">Antigos</button>
-      <button class="nav-principal__item" data-filtro="novos">Novos</button>
-      <button class="nav-principal__item" data-filtro="grandes">Grandes</button>
-      <button class="nav-principal__item" data-filtro="pequenos">Pequenos</button>
-    </nav>
-  </header>
+        <div id="galeria-templos" class="galeria-templos" aria-live="polite">
+            <!-- Os cartões de templo são gerados dinamicamente pelo JavaScript,
+                 a partir do array "templos" em scripts/dados-templos.js -->
+        </div>
+    </main>
 
-  <main>
-    <section class="galeria-secao">
-      <p class="galeria-secao__legenda" id="legenda-filtro">Exibindo todos os templos</p>
-      <div class="galeria-templos" id="galeria-templos" aria-live="polite">
-        <!-- Os cartões de templo são gerados dinamicamente pelo JavaScript -->
-      </div>
-    </section>
-  </main>
-
-  <footer class="rodape">
-    <p>&copy; <span id="ano-atual"></span> Diogo Bandeira Ramalho | Projeto acadêmico WDD 131</p>
-    <p>Última modificação: <span id="ultima-modificacao"></span></p>
-  </footer>
-
-  <script src="scripts/dados-templos.js"></script>
-  <script src="scripts/templos-filtrados.js"></script>
+    <footer>
+        <p>&copy; <span id="ano"></span> Diogo - WDD 131</p>
+        <p>Maceió, Alagoas, Brasil</p>
+        <p>Última modificação: <span id="ultimaModificacao"></span></p>
+    </footer>
 </body>
 </html>

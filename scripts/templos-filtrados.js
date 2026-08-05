@@ -1,111 +1,119 @@
 // templos-filtrados.js
-// Gera os cartões de templo dinamicamente a partir do array "templos"
-// (definido em dados-templos.js) e responde aos filtros do menu principal.
+// 1) Mantém o comportamento do menu mobile do álbum original.
+// 2) Gera os cartões de templo dinamicamente a partir do array "templos"
+//    (scripts/dados-templos.js), com carregamento lento nativo nas imagens.
+// 3) Responde aos filtros do menu principal (Antigo, Novo, Grande, Pequeno).
 
-const galeria = document.getElementById("galeria-templos");
-const legenda = document.getElementById("legenda-filtro");
-const botoesFiltro = document.querySelectorAll(".nav-principal__item");
+document.addEventListener("DOMContentLoaded", () => {
 
-const formatadorData = new Intl.DateTimeFormat("pt-BR", {
-  day: "numeric",
-  month: "long",
-  year: "numeric",
-  timeZone: "UTC"
-});
+  /* ---------- Menu mobile ---------- */
 
-const formatadorArea = new Intl.NumberFormat("pt-BR");
+  const botaoMenu = document.getElementById("botao-menu");
+  const navPrincipal = document.getElementById("nav-principal");
 
-// Cria o HTML de um único cartão de templo a partir de um objeto de templo.
-function criarCartaoTemplo(templo) {
-  const cartao = document.createElement("article");
-  cartao.className = "cartao-templo";
+  botaoMenu.addEventListener("click", () => {
+    const aberto = navPrincipal.classList.toggle("oculto") === false;
+    botaoMenu.setAttribute("aria-expanded", String(aberto));
+    botaoMenu.textContent = aberto ? "✕" : "☰";
+  });
 
-  const dataFormatada = formatadorData.format(new Date(templo.dedicado));
-  const areaFormatada = `${formatadorArea.format(templo.areaPes2)} pés²`;
+  /* ---------- Galeria de templos ---------- */
 
-  cartao.innerHTML = `
-    <div class="cartao-templo__imagem-wrap">
+  const galeria = document.getElementById("galeria-templos");
+  const legenda = document.getElementById("legenda-filtro");
+  const botoesFiltro = document.querySelectorAll(".nav-link");
+
+  const formatadorData = new Intl.DateTimeFormat("pt-BR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC"
+  });
+
+  const formatadorArea = new Intl.NumberFormat("pt-BR");
+
+  function criarCartaoTemplo(templo) {
+    const cartao = document.createElement("figure");
+    cartao.className = "cartao-templo";
+
+    const dataFormatada = formatadorData.format(new Date(templo.dedicado));
+    const areaFormatada = `${formatadorArea.format(templo.areaPes2)} pés²`;
+
+    cartao.innerHTML = `
       <img
         src="${templo.imagem}"
         alt="${templo.nome}"
         loading="lazy"
-        class="cartao-templo__imagem"
       >
-    </div>
-    <div class="cartao-templo__corpo">
-      <h2 class="cartao-templo__nome">${templo.nome}</h2>
-      <hr class="cartao-templo__linha">
-      <dl class="cartao-templo__dados">
-        <div>
-          <dt>Localização</dt>
-          <dd>${templo.local}</dd>
-        </div>
-        <div>
-          <dt>Dedicação</dt>
-          <dd>${dataFormatada}</dd>
-        </div>
-        <div>
-          <dt>Área total</dt>
-          <dd>${areaFormatada}</dd>
-        </div>
-      </dl>
-    </div>
-  `;
+      <figcaption>
+        <span class="cartao-templo__nome">${templo.nome}</span>
+        <span class="cartao-templo__dado">${templo.local}</span>
+        <span class="cartao-templo__dado">Dedicado em ${dataFormatada}</span>
+        <span class="cartao-templo__dado">${areaFormatada}</span>
+      </figcaption>
+    `;
 
-  return cartao;
-}
-
-// Recebe um array de templos (já filtrado ou não) e desenha os cartões.
-function renderizarTemplos(listaTemplos) {
-  galeria.innerHTML = "";
-  const fragmento = document.createDocumentFragment();
-
-  listaTemplos.forEach((templo) => {
-    fragmento.appendChild(criarCartaoTemplo(templo));
-  });
-
-  galeria.appendChild(fragmento);
-}
-
-// Aplica a regra de filtragem correspondente ao botão de navegação clicado.
-function filtrarTemplos(filtro) {
-  switch (filtro) {
-    case "antigos":
-      return templos.filter((t) => new Date(t.dedicado).getFullYear() < 1900);
-    case "novos":
-      return templos.filter((t) => new Date(t.dedicado).getFullYear() > 2000);
-    case "grandes":
-      return templos.filter((t) => t.areaPes2 > 90000);
-    case "pequenos":
-      return templos.filter((t) => t.areaPes2 < 10000);
-    default:
-      return templos;
+    return cartao;
   }
-}
 
-const textoLegenda = {
-  todos: "Exibindo todos os templos",
-  antigos: "Templos antigos — dedicados antes de 1900",
-  novos: "Templos novos — dedicados depois de 2000",
-  grandes: "Templos grandes — mais de 90.000 pés²",
-  pequenos: "Templos pequenos — menos de 10.000 pés²"
-};
+  function renderizarTemplos(listaTemplos) {
+    galeria.innerHTML = "";
+    const fragmento = document.createDocumentFragment();
 
-botoesFiltro.forEach((botao) => {
-  botao.addEventListener("click", () => {
-    const filtro = botao.dataset.filtro;
+    listaTemplos.forEach((templo) => {
+      fragmento.appendChild(criarCartaoTemplo(templo));
+    });
 
-    botoesFiltro.forEach((b) => b.removeAttribute("aria-current"));
-    botao.setAttribute("aria-current", "page");
+    galeria.appendChild(fragmento);
+  }
 
-    legenda.textContent = textoLegenda[filtro] ?? textoLegenda.todos;
-    renderizarTemplos(filtrarTemplos(filtro));
+  function filtrarTemplos(filtro) {
+    switch (filtro) {
+      case "antigos":
+        return templos.filter((t) => new Date(t.dedicado).getFullYear() < 1900);
+      case "novos":
+        return templos.filter((t) => new Date(t.dedicado).getFullYear() > 2000);
+      case "grandes":
+        return templos.filter((t) => t.areaPes2 > 90000);
+      case "pequenos":
+        return templos.filter((t) => t.areaPes2 < 10000);
+      default:
+        return templos;
+    }
+  }
+
+  const textoLegenda = {
+    todos: "Exibindo todos os templos",
+    antigos: "Templos antigos — dedicados antes de 1900",
+    novos: "Templos novos — dedicados depois de 2000",
+    grandes: "Templos grandes — mais de 90.000 pés²",
+    pequenos: "Templos pequenos — menos de 10.000 pés²"
+  };
+
+  botoesFiltro.forEach((botao) => {
+    botao.addEventListener("click", () => {
+      const filtro = botao.dataset.filtro;
+
+      botoesFiltro.forEach((b) => b.removeAttribute("aria-current"));
+      botao.setAttribute("aria-current", "page");
+
+      legenda.textContent = textoLegenda[filtro] ?? textoLegenda.todos;
+      renderizarTemplos(filtrarTemplos(filtro));
+
+      // Em telas pequenas, fecha o menu depois de escolher um filtro.
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        navPrincipal.classList.add("oculto");
+        botaoMenu.setAttribute("aria-expanded", "false");
+        botaoMenu.textContent = "☰";
+      }
+    });
   });
+
+  renderizarTemplos(templos);
+
+  /* ---------- Rodapé ---------- */
+
+  document.getElementById("ano").textContent = new Date().getFullYear();
+  document.getElementById("ultimaModificacao").textContent = document.lastModified;
+
 });
-
-// Rodapé: ano de direitos autorais e data da última modificação da página.
-document.getElementById("ano-atual").textContent = new Date().getFullYear();
-document.getElementById("ultima-modificacao").textContent = document.lastModified;
-
-// Renderização inicial: todos os templos.
-renderizarTemplos(templos);
