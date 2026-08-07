@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planejamento do Site - Energia Consciente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-escuro: #2E7D32;
+      --verde-claro: #A5D6A7;
+      --laranja: #F57C00;
+      --cinza-texto: #333333;
+      --branco: #FFFFFF;
+      --font-titulo: 'Poppins', sans-serif;
+      --font-corpo: 'Open Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-corpo);
+      color: var(--cinza-texto);
+      background-color: var(--branco);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--verde-escuro);
+      color: var(--branco);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: var(--font-titulo);
+      margin: 0 0 0.5rem 0;
+      font-size: 1.8rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-titulo);
+      color: var(--verde-escuro);
+      border-bottom: 3px solid var(--laranja);
+      padding-bottom: 0.4rem;
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      font-family: var(--font-titulo);
+      font-size: 1.05rem;
+      color: var(--verde-escuro);
+      margin-bottom: 0.3rem;
+    }
+
+    .card {
+      background-color: var(--verde-claro);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .cores-lista {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .cores-lista li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0;
+    }
+
+    .amostra-cor {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      flex-shrink: 0;
+    }
+
+    .fonte-exemplo {
+      padding: 0.8rem 1rem;
+      border-left: 4px solid var(--laranja);
+      background-color: #FAFAFA;
+      margin-bottom: 0.8rem;
+    }
+
+    .fonte-exemplo p {
+      margin: 0.2rem 0 0 0;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .titulo-poppins {
+      font-family: var(--font-titulo);
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--verde-escuro);
+    }
+
+    .corpo-opensans {
+      font-family: var(--font-corpo);
+      font-size: 1rem;
+    }
+
+    .wireframes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    figure {
+      margin: 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .frame-mobile, .frame-desktop {
+      border: 2px solid var(--verde-escuro);
+      border-radius: 8px;
+      background-color: #FAFAFA;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 10px;
+    }
+
+    .frame-mobile {
+      width: 200px;
+    }
+
+    .frame-desktop {
+      width: 380px;
+    }
+
+    .bloco {
+      background-color: var(--verde-claro);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      padding: 6px;
+      text-align: center;
+      color: #1B4D1E;
+    }
+
+    .bloco.destaque {
+      background-color: #FFE0B2;
+      color: #8A4A00;
+    }
+
+    .bloco.neutro {
+      background-color: #E0E0E0;
+      color: #333;
+    }
+
+    .linha-3col {
+      display: flex;
+      gap: 6px;
+    }
+
+    .linha-3col .bloco {
+      flex: 1;
+    }
+
+    footer {
+      background-color: var(--verde-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--verde-claro);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Planejamento do Site</h1>
+    <p>Projeto: Energia Consciente</p>
+  </header>
+
+  <main>
+
+    <section id="nome-do-site">
+      <h2>Nome do site</h2>
+      <div class="card">
+        <h3>Energia Consciente</h3>
+        <p>Este nome comunica diretamente o foco do site: ajudar visitantes a consumir energia elétrica de forma mais consciente e eficiente.</p>
+      </div>
+    </section>
+
+    <section id="finalidade-do-site">
+      <h2>Finalidade do site</h2>
+      <p>O site fornece um recurso educativo sobre consumo consciente de energia elétrica, oferecendo dicas práticas de eficiência energética, uma explicação acessível sobre como funciona a distribuição de energia, e uma calculadora interativa que permite ao visitante estimar o consumo mensal de seus aparelhos domésticos.</p>
+    </section>
+
+    <section id="cenarios">
+      <h2>Cenários</h2>
+      <ul>
+        <li>Quais eletrodomésticos consomem mais energia na minha casa e como posso reduzir esse consumo?</li>
+        <li>Como funciona o processo de distribuição de energia elétrica até minha residência?</li>
+        <li>Quanto vou gastar de energia se eu usar determinado aparelho por X horas por dia?</li>
+      </ul>
+    </section>
+
+    <section id="esquema-de-cores">
+      <h2>Esquema de cores</h2>
+      <ul class="cores-lista">
+        <li><span class="amostra-cor" style="background-color:#2E7D32;"></span> Verde escuro (#2E7D32) — títulos e cabeçalho</li>
+        <li><span class="amostra-cor" style="background-color:#A5D6A7;"></span> Verde claro (#A5D6A7) — fundos de seções e cards</li>
+        <li><span class="amostra-cor" style="background-color:#F57C00;"></span> Laranja (#F57C00) — botões, links e destaques</li>
+        <li><span class="amostra-cor" style="background-color:#333333;"></span> Cinza escuro (#333333) — texto do corpo</li>
+        <li><span class="amostra-cor" style="background-color:#FFFFFF; border:1px solid #999;"></span> Branco (#FFFFFF) — fundo principal</li>
+      </ul>
+    </section>
+
+    <section id="tipografia">
+      <h2>Tipografia</h2>
+      <div class="fonte-exemplo">
+        <p class="titulo-poppins">Poppins — títulos e cabeçalhos</p>
+        <p>Fonte moderna, usada em h1, h2 e h3 para dar presença visual aos títulos.</p>
+      </div>
+      <div class="fonte-exemplo">
+        <p class="corpo-opensans" style="font-weight:600;">Open Sans — corpo do texto e parágrafos</p>
+        <p>Fonte de alta legibilidade, usada no texto corrido e no conteúdo educativo.</p>
+      </div>
+    </section>
+
+    <section id="wireframe">
+      <h2>Wireframe da página inicial</h2>
+      <div class="wireframes">
+
+        <figure>
+          <div class="frame-mobile">
+            <div class="bloco neutro">logo + menu (hambúrguer)</div>
+            <div class="bloco">banner: título + slogan</div>
+            <div class="bloco destaque">chamada: calculadora de consumo</div>
+            <div class="bloco neutro">seção: dicas de eficiência</div>
+            <div class="linha-3col">
+              <div class="bloco neutro">dica</div>
+              <div class="bloco neutro">dica</div>
+              <div class="bloco neutro">dica</div>
+            </div>
+            <div class="bloco neutro">seção: como funciona a distribuição</div>
+            <div class="bloco neutro">rodapé: links + referências</div>
+          </div>
+          <figcaption>Visualização mobile</figcaption>
+        </figure>
+
+        <figure>
+          <div class="frame-desktop">
+            <div class="bloco neutro">logo — início · dicas · distribuição · contato</div>
+            <div class="bloco">banner: título + slogan</div>
+            <div class="bloco destaque">chamada: calculadora de consumo</div>
+            <div class="linha-3col">
+              <div class="bloco neutro">dica 1</div>
+              <div class="bloco neutro">dica 2</div>
+              <div class="bloco neutro">dica 3</div>
+            </div>
+            <div class="bloco neutro">rodapé: links + referências</div>
+          </div>
+          <figcaption>Visualização desktop</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Planejamento do site &mdash; Projeto Energia Consciente &mdash; WDD 131</p>
+  </footer>
+
+</body>
+</html>
